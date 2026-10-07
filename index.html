@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>카르노맵 부울 함수 공간의 군론적 통합 분류 | Paper 7</title>
-  <meta name="description" content="D4 이면체군과 S4 대칭군을 이용한 4변수 카르노맵 부울 함수 공간의 통합 수학 분류. Papers 1-3, 6의 통합 논문." />
+  <title>카르노맵 4변수 부울 함수 공간의 군론적 분류 | Paper 7</title>
+  <meta name="description" content="변수 배치, 변수 순열 S4, 입력 반전이 이루는 군 B4의 작용으로 4변수 카르노맵 부울 함수 공간을 분류한다. 자기완결적 논문." />
   <meta name="keywords" content="부울 함수, 카르노맵, D4 군, S4 군, Burnside, 동치류, 대칭 부울 함수, 변수 재배열, 궤도 분류" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -213,11 +213,11 @@
 
   <section class="hero">
     <div class="hero-meta">
-      <span class="paper-badge">Paper 7 · Unified Math Paper</span>
-      <span style="font-family:var(--font-mono);font-size:.8rem;color:var(--text-faint);">Papers 1+2+3+6 통합</span>
+      <span class="paper-badge">Paper 7 · Math Paper</span>
+      <span style="font-family:var(--font-mono);font-size:.8rem;color:var(--text-faint);">자기완결적 논문</span>
     </div>
-    <h1 class="hero-title">카르노맵 위의 부울 함수 공간에 대한 군론적 통합 분류</h1>
-    <p class="hero-sub">A Group-Theoretic Unified Classification of Boolean Function Spaces on Karnaugh Maps — D₄ 이면체군 · S₄ 대칭군 · Burnside 보조정리</p>
+    <h1 class="hero-title">카르노맵 위의 4변수 부울 함수 공간의 군론적 분류</h1>
+    <p class="hero-sub">Group-Theoretic Classification of 4-Variable Boolean Function Spaces on Karnaugh Maps — S₄ 변수 순열 · B₄ 부호 순열군 · Burnside 보조정리</p>
     <div class="tag-cloud">
       <span class="tag-chip">D₄ Dihedral Group</span>
       <span class="tag-chip">S₄ Symmetric Group</span>
@@ -242,18 +242,19 @@
     <article class="card grid-wide">
       <div class="card-title">초록 / Abstract</div>
       <p style="font-size:1.02rem;line-height:1.85;color:var(--text);">
-        본 논문은 4변수 카르노맵에서 발생하는 부울 함수 패턴의 군론적 통합 분류를 제시한다.
-        선행 연구 4편(Papers 1–3, 6)에서 독립적으로 발견된 결과들을 하나의 수학적 언어—<strong>이면체군 D₄</strong>와 <strong>대칭군 S₄</strong>—로 통합한다.
+        본 논문은 4변수 카르노맵 위의 부울 함수 공간 F₄를 변수 순열군 <strong>S₄</strong>, 입력 반전군 <strong>Z₂⁴</strong>, 카르노맵의 격자 대칭이 이루는 부호 순열군 <strong>B₄ = Z₂⁴ ⋊ S₄</strong>의 작용으로 분류한다.
+        필요한 정의와 증명을 모두 본문에 싣는 자기완결적 논문이다.
         주요 결과: 변수 배치 동치류 $24 \to 3$, 대칭 부울 함수 $2^5 = 32$개,
-        Space(XOR) 10궤도 · Space(AND) 30궤도 · Space(NOT) 32궤도.
+        Space(XOR) 10궤도 · Space(AND) 30궤도 · Space(NOT) 32궤도 · 전체 F₄ 3,984궤도 (S₄ 작용).
+        S₄와 격자 D₄가 생성하는 합성군(Z₂⁴ ⋊ S₄, 크기 384) 하에서는 전체 F₄ 402궤도 · 아핀 6궤도 · 자기쌍대 7궤도.
         모든 결과는 Burnside 보조정리와 Python 전산 열거로 이중 검증되었다.
       </p>
       <div style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:.4rem;">
-        <span style="font-size:.75rem;font-family:var(--font-mono);color:var(--text-faint);">통합 출처:</span>
-        <span class="tag-chip">P1 §5.5 D₄ 증명</span>
-        <span class="tag-chip">P2 Hamming Layer</span>
-        <span class="tag-chip">P3 S₄ 재배열</span>
-        <span class="tag-chip">P6 궤도 분류</span>
+        <span style="font-size:.75rem;font-family:var(--font-mono);color:var(--text-faint);">핵심 개념:</span>
+        <span class="tag-chip">변수 배치 동치류</span>
+        <span class="tag-chip">Hamming Layer</span>
+        <span class="tag-chip">S₄ 궤도 (Burnside)</span>
+        <span class="tag-chip">B₄ 합성군</span>
       </div>
     </article>
 
@@ -262,24 +263,39 @@
       <div class="card-title">🔑 핵심 정리 / Key Theorems</div>
       <div class="theorem-list">
         <div class="theorem-box">
-          <div class="th-label">정리 2.1 — D₄ 변수 배치 동치류</div>
+          <div class="th-label">정리 1 — 변수 배치 동치류 (격자 대칭 W, 위수 128)</div>
           <div class="th-text">$|\mathcal{E}| = \dfrac{\binom{4}{2}}{2} = 3$</div>
-          <div class="th-proof">24개 배치 → D₄ 작용 → 3개 독립 동치류 (AB/CD, AC/BD, AD/BC)</div>
+          <div class="th-proof">24개 배치 → 배치 변환군 D₄(위수 8; 평면 동작으로는 토러스 이동 포함 위수 128) 작용 → 3개 독립 동치류 (AB/CD, AC/BD, AD/BC)</div>
         </div>
         <div class="theorem-box">
-          <div class="th-label">정리 3.1 — 완전 대칭 함수</div>
+          <div class="th-label">§4 — 완전 대칭 함수</div>
           <div class="th-text">$|\text{Sym}_4| = 2^5 = 32$</div>
           <div class="th-proof">Hamming weight 5개 레이어 × 독립적 0/1 선택</div>
         </div>
         <div class="theorem-box">
-          <div class="th-label">정리 5.1 — S₄ 궤도 분류 (Burnside)</div>
-          <div class="th-text">XOR: 10궤도 · AND: 30궤도 · NOT: 32궤도</div>
-          <div class="th-proof">Python 전산 열거로 독립 검증 완료</div>
+          <div class="th-label">§5 — S₄ 궤도 분류 (Burnside)</div>
+          <div class="th-text">전체 F₄: 3,984궤도 · XOR: 10 · AND: 30 · NOT: 32</div>
+          <div class="th-proof">Fix 표 전부 수록, 단조 30궤도 완전 목록 포함, Python 전수 열거로 독립 검증</div>
         </div>
         <div class="theorem-box">
-          <div class="th-label">정리 5.2 — Space(NOT) 고정점 비존재</div>
+          <div class="th-label">§5.5 — Space(NOT) 고정점 비존재</div>
           <div class="th-text">$\text{Fix}_{S_4}(\text{Space(NOT)}) = \emptyset$</div>
           <div class="th-proof">자기쌍대 ∧ 완전대칭 → 모순 ∴ 고정점 없음</div>
+        </div>
+        <div class="theorem-box">
+          <div class="th-label">정리 2·3 — S₄ × 격자 D₄ 합성군</div>
+          <div class="th-text">$G = \langle S_4, D_4 \rangle = \mathbb{Z}_2^4 \rtimes S_4$, $|G| = 384$ · F₄: 402궤도 · 아핀 6 · 자기쌍대 7</div>
+          <div class="th-proof">직접곱이 아님 (가환 X, D₄ ∩ S₄ = 2). 20개 켤레류 Burnside로 증명 + 전수 열거 검증</div>
+        </div>
+        <div class="theorem-box">
+          <div class="th-label">명제 2 — 패리티와 체커보드</div>
+          <div class="th-text">Gray 축 순서에서 4변수 XOR의 그림은 체커보드, 이진 축 순서에서는 이중대각</div>
+          <div class="th-proof">Gray 인접 셀은 한 비트만 달라 해밍 무게의 홀짝이 반전됨. 대칭 함수의 그림은 24개 변수 배치에서 모두 같음(명제 1)</div>
+        </div>
+        <div class="theorem-box">
+          <div class="th-label">정리 4 — 카르노맵 그림의 대칭과 종류</div>
+          <div class="th-text">시각 대칭 = $W$ 안정화군의 원소 · 그림 종류 수 = $B_4$-궤도 안의 $W$-궤도 수 (1, 2, 3)</div>
+          <div class="th-proof">함수 3,220 / 36,204 / 26,112개가 각각 1 / 2 / 3종의 그림을 가짐 (전수 열거와 일치)</div>
         </div>
       </div>
     </article>
@@ -368,9 +384,9 @@
               <td class="td-mono">전체 F₄</td>
               <td>ALL</td>
               <td class="td-num">65,536</td>
-              <td class="td-num">—</td>
-              <td>4변수 부울 함수 전공간</td>
-              <td>이론적 상한</td>
+              <td class="td-num">3,984</td>
+              <td>4변수 부울 함수 전공간 (합성군 G 하에서는 402궤도)</td>
+              <td>Burnside + Python</td>
             </tr>
           </tbody>
         </table>
@@ -401,10 +417,10 @@
 
     <!-- Synthesis -->
     <article class="card">
-      <div class="card-title">🔗 통합 프레임워크</div>
+      <div class="card-title">🔗 대칭군 관계도</div>
       <div class="synth-flow">
         <div class="synth-row">
-          <div class="synth-box">D₄ 변수 배치<br><small>24→3 동치류</small></div>
+          <div class="synth-box">격자 대칭 W (변수 배치)<br><small>24→3 동치류</small></div>
           <span class="synth-arrow">⊂</span>
           <div class="synth-box active">S₄ 재배열 동치<br><small>전체 F₄</small></div>
         </div>
@@ -426,10 +442,10 @@
     <article class="card grid-wide">
       <div class="card-title">📋 인용 / Citation</div>
       <pre id="bibtex7" style="background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem;font-size:.78rem;font-family:var(--font-mono);color:var(--text-muted);overflow-x:auto;white-space:pre-wrap;">@article{choi2026grouptheory,
-  title   = {A Group-Theoretic Unified Classification of Boolean Function Spaces on Karnaugh Maps},
+  title   = {Group-Theoretic Classification of 4-Variable Boolean Function Spaces on Karnaugh Maps},
   author  = {Choi, Jonghun},
   year    = {2026},
-  note    = {Synthesis of Papers 1-3, 6. D4 dihedral and S4 symmetric group orbit classification.},
+  note    = {Orbit classification of 4-variable Boolean functions under S4 and the signed permutation group B4.},
   url     = {https://github.com/inha20/7GroupTheoryBooleanUnification}
 }</pre>
     </article>
