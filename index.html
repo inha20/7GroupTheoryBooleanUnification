@@ -156,6 +156,15 @@
     .synth-box.active{border-color:var(--violet);color:var(--violet);background:var(--violet-bg);}
     .synth-arrow{color:var(--text-faint);font-size:.9rem;}
 
+    /* Figures (원본 PNG 는 흰 배경이라 다크 테마에서도 흰 프레임을 씌운다) */
+    .fig-group{font-family:var(--font-mono);font-size:.76rem;font-weight:600;color:var(--violet);margin:1.4rem 0 .6rem;}
+    .fig-group:first-of-type{margin-top:0;}
+    .fig-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;}
+    .fig{margin:0;background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius-sm);padding:.75rem;}
+    .fig.wide{grid-column:span 2;}
+    .fig img{display:block;width:100%;height:auto;max-width:100%;background:#fff;border-radius:4px;padding:.4rem;}
+    .fig figcaption{font-size:.8rem;color:var(--text-muted);margin-top:.5rem;line-height:1.55;}
+
     /* Toast */
     .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(1rem);
       background:var(--surface);border:1px solid var(--accent);color:var(--text);
@@ -297,6 +306,95 @@
           <div class="th-text">시각 대칭 = $W$ 안정화군의 원소 · 그림 종류 수 = $B_4$-궤도 안의 $W$-궤도 수 (1, 2, 3)</div>
           <div class="th-proof">함수 3,220 / 36,204 / 26,112개가 각각 1 / 2 / 3종의 그림을 가짐 (전수 열거와 일치)</div>
         </div>
+        <div class="theorem-box">
+          <div class="th-label">정리 5 — 그림 종류 수의 판정</div>
+          <div class="th-text">그림 종류 수 = 정지군 $H_f$의 $S_3$ 상이 세 변수쌍 분할에 작용할 때의 궤도 수 (자명 → 3종, 위수 2 → 2종, 위수 6 → 1종)</div>
+          <div class="th-proof">$W \backslash B_4 / H_f$의 개수 = $H_f$의 $B_4/W$ 위 궤도 수. 402개 궤도 전부에서 열거와 일치</div>
+        </div>
+        <div class="theorem-box">
+          <div class="th-label">따름정리 6 — 위수 3인 상은 없다</div>
+          <div class="th-text">정지군의 $S_3$ 상은 위수 1, 2, 6 중 하나. 3-순환을 포함하면 상 = $S_3$ (그림 1종)</div>
+          <div class="th-proof">위수 3 원소는 부호 벡터 공액으로 순수 3-순환과 켤레이고, 세 좌표 위에서 $C_3$-궤도 = $S_3$-궤도(해밍 무게별)이므로 3-순환 불변이면 호환 불변</div>
+        </div>
+        <div class="theorem-box">
+          <div class="th-label">개수의 유도 — 포함·배제와 뫼비우스</div>
+          <div class="th-text">그림 1/2/3종 함수: 3,220 / 36,204 / 26,112 · 단조 궤도 크기 1, 3, 4, 6, 12: 6, 2, 9, 6, 7개 · $\mathrm{Fix}_M((12)(34)) = 28$</div>
+          <div class="th-proof">군 폐포 위 포함·배제로 $N_6 = 3{,}220$, $N_{\ge 2} = 39{,}424$ ($S_4$ 부분군 30개 위 뫼비우스로 단조 정지군 위수별 개수). 계산은 컴퓨터로 수행한 유한 계산(닫힌 식 아님)</div>
+        </div>
+        <div class="theorem-box">
+          <div class="th-label">참고 — 알려진 값과의 관계</div>
+          <div class="th-text">3,984(A003180) · 402(Slepian 1953) · 단조 30, 210(A003182)은 문헌에 있는 값의 독립 재계산</div>
+          <div class="th-proof">새로움은 카르노맵 격자 대칭군 $W$의 식별과 그림 종류 수(정리 1, 4, 5)에 한정됨. 선행 연구 조사는 제한적임</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Figures -->
+    <article class="card grid-wide">
+      <div class="card-title">🖼️ 그림 / Figures</div>
+
+      <div class="fig-group">Gray 순서와 표준 카르노맵 (2.2절)</div>
+      <div class="fig-grid">
+        <figure class="fig wide"><img src="images/fig02_gray_cycle.png" width="432" height="119" loading="lazy" alt="2비트 Gray code 00, 01, 11, 10의 순환 순서">
+          <figcaption>그림 1. 2비트 Gray code $00 \to 01 \to 11 \to 10 \to 00$. 이웃한 라벨은 한 비트만 다르고, 마지막과 처음도 한 비트만 다르다.</figcaption></figure>
+        <figure class="fig"><img src="images/fig01_kmap_exactly0.png" width="310" height="255" loading="lazy" alt="표준 배치 AB/CD의 카르노맵, 좌상단 칸만 1">
+          <figcaption>그림 2. 배치 $AB/CD$의 카르노맵. 좌상단 칸이 입력 $0000$. 민텀 $m_0$만 1인 함수 $E_0$의 그림.</figcaption></figure>
+      </div>
+
+      <div class="fig-group">변수 쌍의 맞교환 = 위치 1과 3의 줄 교환 (3.2절, 보조정리 1)</div>
+      <div class="fig-grid">
+        <figure class="fig"><img src="images/fig03_swap_xy_index_table.png" width="316" height="369" loading="lazy" alt="XY와 YX 라벨 대응표">
+          <figcaption>그림 3 (표). $XY$와 $YX$의 라벨 대응. $01$과 $10$이 서로 바뀐다.</figcaption></figure>
+        <figure class="fig wide"><img src="images/fig05_swap_row_variables.png" width="717" height="393" loading="lazy" alt="행 변수를 맞바꾸면 위치 1과 3의 행이 바뀐다">
+          <figcaption>그림 3 (그림). 행 변수 $X, Y$ 맞교환. 같은 색은 원래 같은 행. $YX$ 배치에서 위치 $1$과 $3$의 행이 바뀐다.</figcaption></figure>
+        <figure class="fig"><img src="images/fig04_swap_zw_index_table.png" width="311" height="370" loading="lazy" alt="ZW와 WZ 라벨 대응표">
+          <figcaption>그림 4 (표). $ZW$와 $WZ$의 라벨 대응.</figcaption></figure>
+        <figure class="fig wide"><img src="images/fig06_swap_col_variables.png" width="754" height="319" loading="lazy" alt="열 변수를 맞바꾸면 위치 1과 3의 열이 바뀐다">
+          <figcaption>그림 4 (그림). 열 변수 $Z, W$ 맞교환. 행 대신 열이 바뀐다.</figcaption></figure>
+      </div>
+
+      <div class="fig-group">패리티 함수: Gray 축은 체커보드, 이진 축은 이중대각 (3.5절, 명제 2)</div>
+      <div class="fig-grid">
+        <figure class="fig"><img src="images/fig13_parity_xor_gray.png" width="308" height="257" loading="lazy" alt="XOR, Gray 축 순서, 체커보드">
+          <figcaption>그림 5. XOR, Gray 축 순서 (체커보드).</figcaption></figure>
+        <figure class="fig"><img src="images/fig14_parity_xor_binary.png" width="311" height="253" loading="lazy" alt="XOR, 이진 축 순서, 이중대각">
+          <figcaption>그림 5. XOR, 이진 축 순서 (이중대각).</figcaption></figure>
+        <figure class="fig"><img src="images/fig15_parity_xnor_gray.png" width="307" height="262" loading="lazy" alt="XNOR, Gray 축 순서">
+          <figcaption>그림 5. XNOR, Gray 축 순서.</figcaption></figure>
+        <figure class="fig"><img src="images/fig16_parity_xnor_binary.png" width="321" height="252" loading="lazy" alt="XNOR, 이진 축 순서">
+          <figcaption>그림 5. XNOR, 이진 축 순서.</figcaption></figure>
+      </div>
+
+      <div class="fig-group">레이어와 기저 함수 $E_k$ (4.2~4.3절, 명제 1: 24개 배치에서 모두 같은 그림)</div>
+      <div class="fig-grid">
+        <figure class="fig"><img src="images/fig17_layers.png" width="301" height="251" loading="lazy" alt="칸별 레이어 L1부터 L5">
+          <figcaption>그림 6. 칸별 레이어. 그림의 $L1 \dots L5$는 본문의 $L_0 \dots L_4$ (해밍 무게 $0 \dots 4$).</figcaption></figure>
+        <figure class="fig"><img src="images/fig01_kmap_exactly0.png" width="310" height="255" loading="lazy" alt="E0, Exactly-0의 그림">
+          <figcaption>그림 7. $E_0$ (Exactly-0).</figcaption></figure>
+        <figure class="fig"><img src="images/fig18_exactly1.png" width="311" height="253" loading="lazy" alt="E1, Exactly-1의 그림">
+          <figcaption>그림 7. $E_1$ (Exactly-1).</figcaption></figure>
+        <figure class="fig"><img src="images/fig19_exactly2.png" width="309" height="258" loading="lazy" alt="E2, Exactly-2의 그림">
+          <figcaption>그림 7. $E_2$ (Exactly-2).</figcaption></figure>
+        <figure class="fig"><img src="images/fig20_exactly3.png" width="317" height="260" loading="lazy" alt="E3, Exactly-3의 그림">
+          <figcaption>그림 7. $E_3$ (Exactly-3).</figcaption></figure>
+        <figure class="fig"><img src="images/fig21_exactly4.png" width="308" height="264" loading="lazy" alt="E4, Exactly-4의 그림">
+          <figcaption>그림 7. $E_4$ (Exactly-4).</figcaption></figure>
+      </div>
+
+      <div class="fig-group">배치에 따라 그림이 달라지는 예 (6.5절, 정리 4·5)</div>
+      <div class="fig-grid">
+        <figure class="fig"><img src="images/fig07_xorplane_ab_cd.png" width="340" height="322" loading="lazy" alt="m(5,6,9,10)의 AB/CD 배치 그림">
+          <figcaption>그림 8. $f = m(5,6,9,10)$, 배치 $AB/CD$.</figcaption></figure>
+        <figure class="fig"><img src="images/fig08_xorplane_ac_bd.png" width="340" height="321" loading="lazy" alt="m(5,6,9,10)의 AC/BD 배치 그림">
+          <figcaption>그림 8. 같은 $f$, 배치 $AC/BD$.</figcaption></figure>
+        <figure class="fig"><img src="images/fig09_xorplane_ad_bc.png" width="342" height="330" loading="lazy" alt="m(5,6,9,10)의 AD/BC 배치 그림">
+          <figcaption>그림 8. 같은 $f$, 배치 $AD/BC$ ($AC/BD$와 같은 그림). 그림 종류 2, $|\mathrm{Stab}_W| = 32$.</figcaption></figure>
+        <figure class="fig"><img src="images/fig10_xnorplane_ab_cd.png" width="345" height="326" loading="lazy" alt="m(0,6,9,15)의 AB/CD 배치 그림">
+          <figcaption>그림 9. $f = m(0,6,9,15)$, 배치 $AB/CD$.</figcaption></figure>
+        <figure class="fig"><img src="images/fig11_xnorplane_ac_bd.png" width="344" height="327" loading="lazy" alt="m(0,6,9,15)의 AC/BD 배치 그림">
+          <figcaption>그림 9. 같은 $f$, 배치 $AC/BD$ ($AB/CD$와 같은 그림).</figcaption></figure>
+        <figure class="fig"><img src="images/fig12_xnorplane_ad_bc.png" width="348" height="334" loading="lazy" alt="m(0,6,9,15)의 AD/BC 배치 그림">
+          <figcaption>그림 9. 같은 $f$, 배치 $AD/BC$. 그림 종류 2, $|\mathrm{Stab}_W| = 16$.</figcaption></figure>
       </div>
     </article>
 
