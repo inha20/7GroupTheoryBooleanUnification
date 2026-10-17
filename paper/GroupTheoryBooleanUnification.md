@@ -28,16 +28,17 @@
 ## 1. 서론 (Introduction)
 
 ### 1.1 연구 배경과 문제
-카르노맵(Karnaugh, 1953)은 논리식의 곱의 합(SOP) 표현을 최소화하는 도구로 널리 쓰인다. 인접한 셀의 입력이 정확히 한 비트만 다르도록 Gray code 순서로 입력을 $4 \times 4$ 격자에 배열하면, 인접한 셀 묶음으로 공통 변수를 소거할 수 있다. 그러나 카르노맵은 단순한 표가 아니라 수학적 구조를 가진다.
+카르노맵(Karnaugh, 1953)은 논리식의 곱의 합(SOP) 표현을 최소화하는 도구로 널리 쓰인다. 인접한 셀의 입력이 정확히 한 비트만 다르도록 Gray code 순서로 입력을 $4 \times 4$ 격자에 배열하면, 인접한 셀 묶음으로 공통 변수를 소거할 수 있다. 이 도표는 Veitch (1952)의 차트를 개량한 것으로, Veitch의 차트가 입력을 이진수 순서로 배열한 데 비해 Karnaugh는 Gray code 순서를 쓴다 (이 순서의 차이는 3.5절의 명제 2에서 다시 나온다). 스위칭 회로에 부울 대수를 적용한 것은 Shannon (1938)이고, 논리식 최소화의 알고리즘적 방법은 Quine (1952)과 McCluskey (1956)에 있다. 그러나 카르노맵은 단순한 표가 아니라 수학적 구조를 가진다.
 
 1. 격자의 양끝(첫 행과 마지막 행, 첫 열과 마지막 열)도 한 비트 차이이므로 인접하다. 4변수 카르노맵의 인접 그래프는 $4 \times 4$ 이산 토러스 $C_4 \,\square\, C_4$이고, 이는 4차원 초입방체 $Q_4 = \mathbb{Z}_2^4$의 인접 그래프와 동형이다.
 2. 변수 $A, B, C, D$를 행과 열에 배치하는 방법은 $4! = 24$가지인데, 교재가 제시하는 $AB/CD$는 하나의 선택일 뿐이다. 배치를 바꾸면 같은 함수의 그림이 달라질 수 있다. 어떤 배치들이 본질적으로 같은가?
 3. 65,536개의 함수 중 어떤 것들이 변수 이름을 바꾸거나 입력을 반전해도 같은 구조인가? 이를 세는 것이 궤도 분류 문제이다.
 
 ### 1.2 관련 연구와 본 논문의 위치
-- **고전적 계수 결과.** 부울 함수를 입력 변수의 순열(P), 입력 반전(N), 출력 반전(N)으로 분류하는 문제는 스위칭 이론의 고전적 주제이다. 변수 순열과 입력 반전의 군 아래 동치류(NP류)의 개수는 Slepian (1953)이 구했고, Pólya (1937)의 계수 이론과 Harrison (1963, 1971)이 이를 일반화했다. 4변수에서 NP 동치류는 402개(A000616), NPN 동치류는 222개(A000370)로 알려져 있다. 변수 순열군 $S_n$만의 작용 아래 4변수 함수의 궤도 수 3,984는 A003180에 있다. 따라서 **본 논문의 3,984와 402는 새 결과가 아니라 독립 재계산이며**, 우리의 Fix 표가 이 값들을 재현한다는 점이 검증이다.
-- **단조 함수.** 변수 순열 아래 비동치 단조 함수의 개수 30($n=4$)과 210($n=5$)은 A003182에 있다(2, 3, 5, 10, 30, 210, 16353, …). 이는 Dedekind 수의 동치류 버전이며 $n=7$까지의 계산이 Stephen와 Yusun (2012)에 있다. 따라서 30과 210 역시 새 수치가 아니다. 본 논문이 추가하는 것은 30개 궤도의 명시적 목록과 궤도 크기 분포(5.5절)와 Fix 값이다.
-- **클론.** Post (1941)는 부울 함수 집합 중 합성과 변수 식별에 닫힌 것(클론)의 격자 전체를 분류하였다. 본 논문이 다루는 아핀, 단조, 자기쌍대 함수는 그 대표적인 클론이다. 이 클론들 각각의 개수는 알려져 있으나(예: 자기쌍대 단조 함수 개수는 A001206), 자기쌍대 함수의 $S_n$-궤도 수(4변수에서 32)와 아핀 함수의 궤도 수는 우리가 검색한 범위에서 문헌 값을 찾지 못했다.
+- **고전적 계수 결과.** 부울 함수를 입력 변수의 순열(P), 입력 반전(N), 출력 반전(N)으로 분류하는 문제는 스위칭 이론의 고전적 주제이다. 변수 순열과 입력 반전의 군 아래 동치류(NP류)의 개수는 Slepian (1953)이 구했고, Pólya (1937)의 계수 이론과 Harrison (1963, 1971)이 이를 일반화했다. Golomb (1959)도 이 분류 문제를 다룬다. 4변수에서 NP 동치류는 402개(A000616), NPN 동치류는 222개(A000370)로 알려져 있다. 변수 순열군 $S_n$만의 작용 아래 4변수 함수의 궤도 수 3,984는 A003180에 있다. 따라서 **본 논문의 3,984와 402는 새 결과가 아니라 독립 재계산이며**, 우리의 Fix 표가 이 값들을 재현한다는 점이 검증이다.
+- **단조 함수.** 변수 순열 아래 비동치 단조 함수의 개수 30($n=4$)과 210($n=5$)은 A003182에 있다(2, 3, 5, 10, 30, 210, 16353, …). 이는 Dedekind 수의 동치류 버전이다. 단조 함수의 총수(Dedekind 수)는 Dedekind (1897)가 처음 다루었고, 5변수 자유 분배 격자의 크기는 Church (1940)가 계산했다(상수 두 개를 더하면 7,581). $n=7$까지의 동치류 계산이 Stephen와 Yusun (2012)에 있다. 따라서 30과 210 역시 새 수치가 아니다. 본 논문이 추가하는 것은 30개 궤도의 명시적 목록과 궤도 크기 분포(5.5절)와 Fix 값이다.
+- **클론.** Post (1941)는 부울 함수 집합 중 합성과 변수 식별에 닫힌 것(클론)의 격자 전체를 분류하였다(현대적 개관은 Böhler 외, 2003). 본 논문이 다루는 아핀, 단조, 자기쌍대 함수는 그 대표적인 클론이다. 이 클론들 각각의 개수는 알려져 있으나(예: 자기쌍대 단조 함수 개수는 A001206), 자기쌍대 함수의 $S_n$-궤도 수(4변수에서 32)와 아핀 함수의 궤도 수는 우리가 검색한 범위에서 문헌 값을 찾지 못했다.
+- **초입방체의 대칭.** 카르노맵의 인접 그래프가 $Q_4$와 동형이므로(1.1절) 그 자기동형군은 $Q_4$의 자기동형군, 곧 부호 순열군 $B_4 = \mathbb{Z}_2^4 \rtimes S_4$ (위수 $2^4 \cdot 4! = 384$)이다. $Q_n$의 자기동형군이 위수 $2^n n!$의 초팔면체군이라는 사실은 고전적이다 (Coxeter, 1973; Harary, Hayes & Wu, 1988; Humphreys, 1990). 이 사실 자체는 새롭지 않으며, 본 논문은 카르노맵의 격자 대칭(3.2절의 $W$)이 이 군의 지표 3인 부분군임을 보인다.
 - **본 논문의 기여**는 다음과 같이 한정한다. (a) 카르노맵의 격자 대칭을 $B_4$의 부분군 $W$로 식별하고 변수 배치 24가지가 3개의 동치류로 나뉨을 이 군의 지표 3으로 설명한다(정리 1). (b) 카르노맵 그림이 배치에 따라 몇 가지로 달라지는지를 $B_4$-궤도가 $W$-궤도로 쪼개지는 수로 환원하고 전수 계산한다(정리 4). (c) 위 고전적 수치들을 한 틀(Burnside 표)에서 재현하고, 클론별 궤도 구조와 목록을 명시한다. (a), (b)는 카르노맵 모델에 특화된 내용이라 우리가 검색한 범위에서 선행 문헌을 찾지 못했다. 다만 문헌 검색은 제한적이었으므로 이는 선행 연구가 없다는 주장이 아니다.
 
 ### 1.3 논문의 구성
@@ -80,11 +81,11 @@
 ### 2.3 군과 작용
 - **변수 순열군** $S_4$: $\pi \in S_4$는 입력점에 $(\pi\mathbf{x})_i = x_{\pi(i)}$로 작용한다 ($|S_4| = 24$).
 - **입력 반전군** $N = \{(\mathrm{id}, c) : c \in \mathbb{Z}_2^4\} \cong \mathbb{Z}_2^4$: $(\mathbf{x} \mapsto \mathbf{x} \oplus c)$.
-- **부호 순열군** $B_4$: 위 두 가지를 합성한 사상 $(\pi, c): \mathbf{x} \mapsto (x_{\pi(1)} \oplus c_1, \dots, x_{\pi(4)} \oplus c_4)$ 전체이다. $N$은 $B_4$의 정규부분군이고 $S_4$는 보수이므로 $B_4 = N \rtimes S_4$, $|B_4| = 2^4 \cdot 4! = 384$이다. 이는 4차원 초입방체 $Q_4$의 자기동형군이다.
+- **부호 순열군** $B_4$: 위 두 가지를 합성한 사상 $(\pi, c): \mathbf{x} \mapsto (x_{\pi(1)} \oplus c_1, \dots, x_{\pi(4)} \oplus c_4)$ 전체이다. $N$은 $B_4$의 정규부분군이고 $S_4$는 $N$의 여군(complement)이므로 $B_4 = N \rtimes S_4$, $|B_4| = 2^4 \cdot 4! = 384$이다. 이는 4차원 초입방체 $Q_4$의 자기동형군이다.
 - **함수에 대한 작용**: 입력점의 치환 $g$는 $(g \cdot f)(\mathbf{x}) = f(g^{-1}\mathbf{x})$로 함수에 작용한다.
 
 ### 2.4 번사이드 보조정리
-유한군 $G$가 유한집합 $X$에 작용할 때 궤도의 수는
+이 보조정리는 Burnside (1897)의 교재에 실려 그의 이름이 붙었으나, 그 이전에 Cauchy와 Frobenius가 알고 있었다 (Neumann, 1979). 유한군 $G$가 유한집합 $X$에 작용할 때 궤도의 수는
 $$|X / G| = \frac{1}{|G|} \sum_{g \in G} |\mathrm{Fix}(g, X)|, \qquad \mathrm{Fix}(g, X) = \{x \in X : g x = x\}$$
 이다. $g$가 $\mathbb{Z}_2^4$의 16개 입력점에 일으키는 순환(cycle)의 개수를 $c(g)$라 하면, $g$로 불변인 함수는 각 순환 위에서 상수이므로 $|\mathrm{Fix}(g, \mathcal{F}_4)| = 2^{c(g)}$이다.
 
@@ -293,7 +294,7 @@ $$|\mathcal{F}_4 / S_4| = \frac{1}{24}\big[1 \cdot 2^{16} + 6 \cdot 2^{12} + 3 \
 ### 5.3 부분공간: 세 가지 클론
 다음 세 함수 집합은 Post의 격자에서 합성에 닫힌 클론이다.
 
-- **아핀 함수** $L$: $f = c_0 \oplus c_1 x_1 \oplus \cdots \oplus c_4 x_4$ ($c_i \in \mathbb{Z}_2$), $|L| = 2^5 = 32$ (XOR이 생성).
+- **아핀 함수** $L$: $f = c_0 \oplus c_1 x_1 \oplus \cdots \oplus c_4 x_4$ ($c_i \in \mathbb{Z}_2$), $|L| = 2^5 = 32$ (XOR과 상수 1이 생성).
 - **단조 함수** $M$: $\mathbf{x} \le \mathbf{y}$ (성분별)이면 $f(\mathbf{x}) \le f(\mathbf{y})$. 상수 0과 1을 포함하며 $|M| = 168$ (4변수 Dedekind 수; AND와 OR와 상수가 생성).
 - **자기쌍대 함수** $D$: $f(\neg\mathbf{x}) = \neg f(\mathbf{x})$, $|D| = 2^8 = 256$.
 
@@ -314,8 +315,8 @@ $$|\mathcal{F}_4 / S_4| = \frac{1}{24}\big[1 \cdot 2^{16} + 6 \cdot 2^{12} + 3 \
 $$|\mathrm{Fix}_M(\sigma)| = \bigl|\{\text{궤도 순서집합 } P_\sigma \text{의 상집합}\}\bigr|.$$
 
 각 켤레류에서 $P_\sigma$는 다음과 같이 작다.
-- $C_1 = \mathrm{id}$: $P = 2^{[4]}$ (16원소). 상집합의 수는 4변수 Dedekind 수 168이다 (이미 알려진 값, Dedekind 1897).
-- $C_2 = (12)$: 궤도는 $(|S \cap \{1,2\}|, x_3, x_4) \in \{0,1,2\} \times \{0,1\}^2$로 정해지고 순서는 성분별 순서이다. 곧 $P$는 사슬 $[3] \times [2] \times [2]$의 곱이고 상집합의 수는 $3 \times 2 \times 2$ 상자 안의 평면분할 수 $PP(2,2,3) = \prod_{i \le 2, j \le 2} \frac{i + j + 2}{i + j - 1} = 4 \cdot \frac{5}{2} \cdot \frac{5}{2} \cdot 2 = 50$ (MacMahon)이다.
+- $C_1 = \mathrm{id}$: $P = 2^{[4]}$ (16원소). 상집합의 수는 4변수 Dedekind 수 168이다 (이미 알려진 값, Dedekind, 1897).
+- $C_2 = (12)$: 궤도는 $(|S \cap \{1,2\}|, x_3, x_4) \in \{0,1,2\} \times \{0,1\}^2$로 정해지고 순서는 성분별 순서이다. 곧 $P$는 사슬 $[3] \times [2] \times [2]$의 곱이고 상집합의 수는 $3 \times 2 \times 2$ 상자 안의 평면분할 수 $PP(2,2,3) = \prod_{i \le 2, j \le 2} \frac{i + j + 2}{i + j - 1} = 4 \cdot \frac{5}{2} \cdot \frac{5}{2} \cdot 2 = 50$ (MacMahon, 1916)이다.
 - $C_4 = (123)$: 궤도는 $(|S \cap \{1,2,3\}|, x_4) \in \{0,1,2,3\} \times \{0,1\}$이고 $P = [4] \times [2]$이다. 상집합의 수는 두 사슬의 곱의 격자 경로 수 $\binom{4 + 2}{2} = 15$이다.
 - $C_5 = (1234)$: 부분집합 16개가 6개의 궤도(원형 이진 목걸이)로 나뉜다: $\varnothing$, $\{1\}$, $\{1,2\}$ (인접 쌍), $\{1,3\}$ (대각 쌍), $\{1,2,3\}$, $\{1,2,3,4\}$. $\{1,2\}$와 $\{1,3\}$은 크기가 같아 비교 불가능하고 나머지는 사슬이다. 곧 $P$는 $\varnothing < \{1\} < \{\{1,2\}, \{1,3\}\} < \{1,2,3\} < \{1,2,3,4\}$ (가운데 두 원소는 비교 불가능)이다. 상집합은 위쪽 원소부터 채워지므로 다음과 같이 센다. 빈 상집합 1개, 최대 원소 $\{1,2,3,4\}$만 있는 것 1개, 여기에 $\{1,2,3\}$을 더한 것 1개, 거기에 가운데 두 원소를 $\{1,2\}$만 / $\{1,3\}$만 / 둘 다 더하는 것 3개, 다시 $\{1\}$까지 더한 것 1개, 마지막으로 $\varnothing$까지 포함한 전체 1개이다. 합은 $1 + 1 + 1 + 3 + 1 + 1 = 8$이다.
 - $C_3 = (12)(34)$: 궤도가 10개 ($\varnothing$, $\{1\}\!\sim\!\{2\}$, $\{3\}\!\sim\!\{4\}$, $\{1,2\}$, $\{3,4\}$, $\{1,3\}\!\sim\!\{2,4\}$, $\{1,4\}\!\sim\!\{2,3\}$, $\{1,2,3\}\!\sim\!\{1,2,4\}$, $\{1,3,4\}\!\sim\!\{2,3,4\}$, $\{1,2,3,4\}$)인 순서집합이다. 층별로 $\varnothing$ (층 0), $a = \{1\}\!\sim\!\{2\}$, $b = \{3\}\!\sim\!\{4\}$ (층 1), $p = \{1,2\}$, $q = \{3,4\}$, $r = \{1,3\}\!\sim\!\{2,4\}$, $s = \{1,4\}\!\sim\!\{2,3\}$ (층 2), $t = \{1,2,3\}\!\sim\!\{1,2,4\}$, $u = \{1,3,4\}\!\sim\!\{2,3,4\}$ (층 3), $z$ (층 4)이다. 위로 가는 관계는 $p < t$, $q < u$, $r, s < t, u$, $a < p, r, s$, $b < q, r, s$이고 (추이적으로 닫는다), $a \not< q$, $b \not< p$이다. 빈 상집합이 아닌 상집합 $U$는 $z$를 포함한다. $U \cap \{t, u\}$로 나누어 센다.
@@ -372,7 +373,7 @@ $$|\mathrm{Fix}_M(\sigma)| = \bigl|\{\text{궤도 순서집합 } P_\sigma \text{
 
 크기 합은 $6 \cdot 1 + 2 \cdot 3 + 9 \cdot 4 + 6 \cdot 6 + 7 \cdot 12 = 168$이다.
 
-**궤도 크기 분포의 유도.** 궤도의 크기는 $24 / |\mathrm{Stab}(f)|$이므로 정지군의 위수별 함수 수가 분포를 정한다. $S_4$의 부분군 30개 각각에 대해 $\mathrm{Fix}(H)$ ($H$로 불변인 단조 함수의 수, 곧 $H$-궤도 순서집합의 상집합 수)를 구하고, 부분군 격자 위의 뫼비우스 반전 $N(H) = \mathrm{Fix}(H) - \sum_{K \supsetneq H} N(K)$로 정지군이 정확히 $H$인 함수의 수 $N(H)$를 얻는다. 위수별로 합하면 위수 24가 6개, 8이 6개, 6이 36개, 4가 36개, 2가 84개이고 12, 3, 1은 0개이다 ($6 + 6 + 36 + 36 + 84 = 168$). 위수로 $24$를 나눈 크기로 다시 나누면 크기 1, 3, 4, 6, 12인 궤도가 각각 $6, 2, 9, 6, 7$개이다. 특히 정지군이 자명한 단조 함수는 없다. 이는 30개 부분군에 대한 유한 계산이며 닫힌 식은 아니다. 30개 궤도의 대표 함수 목록 자체는 여전히 열거로 얻었다 (`verify_stabilizer_counts.py` [A], `verify_extras.py` [D]).
+**궤도 크기 분포의 유도.** 궤도의 크기는 $24 / |\mathrm{Stab}(f)|$이므로 정지군의 위수별 함수 수가 분포를 정한다. $S_4$의 부분군 30개 각각에 대해 $\mathrm{Fix}(H)$ ($H$로 불변인 단조 함수의 수, 곧 $H$-궤도 순서집합의 상집합 수)를 구하고, 부분군 격자 위의 뫼비우스 반전(Hall, 1936) $N(H) = \mathrm{Fix}(H) - \sum_{K \supsetneq H} N(K)$로 정지군이 정확히 $H$인 함수의 수 $N(H)$를 얻는다. 위수별로 합하면 위수 24가 6개, 8이 6개, 6이 36개, 4가 36개, 2가 84개이고 12, 3, 1은 0개이다 ($6 + 6 + 36 + 36 + 84 = 168$). 위수로 $24$를 나눈 크기로 다시 나누면 크기 1, 3, 4, 6, 12인 궤도가 각각 $6, 2, 9, 6, 7$개이다. 특히 정지군이 자명한 단조 함수는 없다. 이는 30개 부분군에 대한 유한 계산이며 닫힌 식은 아니다. 30개 궤도의 대표 함수 목록 자체는 여전히 열거로 얻었다 (`verify_stabilizer_counts.py` [A], `verify_extras.py` [D]).
 
 ### 5.6 공간들의 교집합
 네 공간은 포함 관계를 이루지 않는다. 완전 대칭 함수 $\mathcal{S}_4$ (32개)와의 교집합은 다음과 같다.
@@ -504,6 +505,7 @@ $$\Bigl|\bigcup_i \mathrm{Fix}(C_i)\Bigr| = \sum_{\varnothing \ne S \subseteq [m
 2. 24가지 변수 배치는 $W$ 아래 3개의 동치류로 나뉜다. 격자의 회전·반사 8개만으로는 12개이다.
 3. 완전 대칭 함수의 그림은 배치에 무관하다. 그 밖의 함수는 배치에 따라 달라질 수 있다.
 4. $S_4$ 아래의 궤도 수: 전체 3,984, 아핀 10, 단조 30, 자기쌍대 32. $B_4$ 아래: 전체 402, 아핀 6, 자기쌍대 7.
+5. 그림의 시각적 대칭은 $W$-안정화군의 원소이다 (정리 4(1)). 함수의 그림이 세 대표 배치에서 구별되는 종류의 수는 1, 2, 3 중 하나이며(정리 4(2), 정리 5), 해당하는 함수는 각각 3,220, 36,204, 26,112개이다.
 
 ### 7.2 한계
 - 3장의 격자 대칭은 표준 Gray code 모델과 격자의 회전·반사·토러스 이동을 기준으로 한다. 다른 규약의 카르노맵(예: 다른 라벨 순서)에서는 군의 구체적 표현이 달라질 수 있으나, 보조정리 1의 구조는 유지된다.
@@ -512,7 +514,7 @@ $$\Bigl|\bigcup_i \mathrm{Fix}(C_i)\Bigr| = \sum_{\varnothing \ne S \subseteq [m
 - 선행 연구 조사는 웹 검색과 OEIS 조회에 한정되었다. 3,984, 402, 30, 210은 문헌 값과 일치함을 확인했으나, 정리 1·4와 클론별 궤도 구조의 선행 여부는 전문가 검토로 다시 확인해야 한다.
 
 ### 7.3 향후 과제
-1. **$n$변수로의 일반화.** $n$이 짝수이면 카르노맵은 $2^{n/2} \times 2^{n/2}$ 토러스이며 변수 순열과 입력 반전이 이루는 군은 $B_n = \mathbb{Z}_2^n \rtimes S_n$ (위수 $2^n n!$)이다. 격자 대칭이 $B_n$의 어떤 부분군이 되는지, 변수 배치의 동치류 수가 어떻게 일반화되는지 규명하는 것이 과제이다. $n$이 홀수이면 격자가 정사각형이 아니므로 별도의 분석이 필요하다. 참고로 변수 순열만 허용한 예비 계산에서 $n=5$는 아핀 함수 64개가 12개, 단조 함수 7,581개가 210개의 $S_5$-궤도로 나뉜다 (`verify_extras.py` [F]).
+1. **$n$변수로의 일반화.** $n$이 짝수이면 카르노맵은 $2^{n/2} \times 2^{n/2}$ 격자(양끝이 이어진 토러스 배열)이며 변수 순열과 입력 반전이 이루는 군은 $B_n = \mathbb{Z}_2^n \rtimes S_n$ (위수 $2^n n!$)이다. 다만 $n = 4$에서는 격자 토러스의 인접 그래프가 $Q_4$와 같지만, $n \ge 6$에서는 한 비트만 다른 셀들의 그래프 $Q_n$이 격자 토러스보다 간선이 많아 두 그래프를 구별해야 한다. 격자 대칭이 $B_n$의 어떤 부분군이 되는지, 변수 배치의 동치류 수가 어떻게 일반화되는지 규명하는 것이 과제이다. $n$이 홀수이면 격자가 정사각형이 아니므로 별도의 분석이 필요하다. 참고로 변수 순열만 허용한 예비 계산에서 $n=5$는 아핀 함수 64개가 12개, 단조 함수 7,581개가 210개의 $S_5$-궤도로 나뉜다 (`verify_extras.py` [F]).
 2. **닫힌 식.** 단조 궤도 크기 분포(6, 2, 9, 6, 7)와 그림 종류별 함수 개수(26,112 / 36,204 / 3,220)를 컴퓨터 계산이 아니라 $S_4$, $B_4$의 부분군 격자의 구조에서 닫힌 식으로 유도하는 것이 남은 과제이다. 30개 궤도의 대표 함수 목록을 열거 없이 얻는 방법도 열려 있다.
 3. **$n$변수 일반화에서의 그림 종류.** 정리 5의 "$B_n/W$ 위의 정지군 작용" 구조가 $n \ge 6$ (짝수)에서 어떤 분포를 주는지 규명한다.
 
@@ -520,12 +522,26 @@ $$\Bigl|\bigcup_i \mathrm{Fix}(C_i)\Bigr| = \sum_{\varnothing \ne S \subseteq [m
 
 ## 참고문헌 / References
 
-1. Karnaugh, M. (1953). The Map Method for Synthesis of Combinational Logic Circuits. *Transactions of the American Institute of Electrical Engineers, Part I: Communication and Electronics*, 72(5), 593–599.
-2. Post, E. L. (1941). *The Two-Valued Iterative Systems of Mathematical Logic*. Annals of Mathematics Studies, No. 5, Princeton University Press.
-3. Burnside, W. (1897). *Theory of Groups of Finite Order*. Cambridge University Press.
-4. Harrison, M. A. (1971). Counting theorems and their applications to classification of switching functions. In A. Mukhopadhyay (Ed.), *Recent Developments in Switching Theory*. Academic Press.
-5. Slepian, D. (1953). On the number of symmetry types of Boolean functions of $n$ variables. *Canadian Journal of Mathematics*, 5, 185–193. https://doi.org/10.4153/CJM-1953-020-x
-6. Harrison, M. A. (1963). The number of equivalence classes of Boolean functions under groups containing negation. *IEEE Transactions on Electronic Computers*, EC-12, 559–561.
-7. Pólya, G. (1937). Kombinatorische Anzahlbestimmungen für Gruppen, Graphen und chemische Verbindungen. *Acta Mathematica*, 68, 145–254.
-8. Stephen, T., & Yusun, T. (2012). Counting inequivalent monotone Boolean functions. arXiv:1209.4623.
-9. The On-Line Encyclopedia of Integer Sequences (OEIS). A000616 (NP-equivalence classes of Boolean functions), A000370 (NPN), A003180 (classes under the symmetric group $S_n$), A003182 (inequivalent monotone Boolean functions), A001206 (self-dual monotone functions). https://oeis.org
+1. Böhler, E., Creignou, N., Reith, S., & Vollmer, H. (2003). Playing with Boolean blocks, part I: Post's lattice with applications to complexity theory. *ACM SIGACT News*, 34(4), 38–52.
+2. Burnside, W. (1897). *Theory of Groups of Finite Order*. Cambridge University Press.
+3. Church, R. (1940). Numerical analysis of certain free distributive structures. *Duke Mathematical Journal*, 6, 732–734.
+4. Coxeter, H. S. M. (1973). *Regular Polytopes* (3rd ed.). Dover Publications.
+5. Dedekind, R. (1897). Über Zerlegungen von Zahlen durch ihre größten gemeinsamen Teiler. *Festschrift der Herzoglichen Technischen Hochschule zur Naturforscher-Versammlung*, Braunschweig. Nachdruck in: *Gesammelte mathematische Werke*, Bd. 2, 103–147.
+6. Golomb, S. W. (1959). On the classification of Boolean functions. *IRE Transactions on Circuit Theory*, CT-6(5), 176–186.
+7. Hall, P. (1936). The Eulerian functions of a group. *Quarterly Journal of Mathematics* (Oxford), 7, 134–151.
+8. Harary, F., Hayes, J. P., & Wu, H.-J. (1988). A survey of the theory of hypercube graphs. *Computers & Mathematics with Applications*, 15(4), 277–289. https://doi.org/10.1016/0898-1221(88)90213-1
+9. Harrison, M. A. (1963). The number of equivalence classes of Boolean functions under groups containing negation. *IEEE Transactions on Electronic Computers*, EC-12, 559–561.
+10. Harrison, M. A. (1971). Counting theorems and their applications to classification of switching functions. In A. Mukhopadhyay (Ed.), *Recent Developments in Switching Theory*. Academic Press.
+11. Humphreys, J. E. (1990). *Reflection Groups and Coxeter Groups*. Cambridge University Press.
+12. Karnaugh, M. (1953). The Map Method for Synthesis of Combinational Logic Circuits. *Transactions of the American Institute of Electrical Engineers, Part I: Communication and Electronics*, 72(5), 593–599.
+13. MacMahon, P. A. (1916). *Combinatory Analysis*, Vol. 2. Cambridge University Press.
+14. McCluskey, E. J. (1956). Minimization of Boolean functions. *Bell System Technical Journal*, 35, 1417–1444.
+15. Neumann, P. M. (1979). A lemma that is not Burnside's. *The Mathematical Scientist*, 4, 133–141.
+16. The On-Line Encyclopedia of Integer Sequences (OEIS). A000616 (NP-equivalence classes of Boolean functions), A000370 (NPN), A003180 (classes under the symmetric group $S_n$), A003182 (inequivalent monotone Boolean functions), A001206 (self-dual monotone functions). https://oeis.org
+17. Pólya, G. (1937). Kombinatorische Anzahlbestimmungen für Gruppen, Graphen und chemische Verbindungen. *Acta Mathematica*, 68, 145–254.
+18. Post, E. L. (1941). *The Two-Valued Iterative Systems of Mathematical Logic*. Annals of Mathematics Studies, No. 5, Princeton University Press.
+19. Quine, W. V. (1952). The problem of simplifying truth functions. *American Mathematical Monthly*, 59, 521–531.
+20. Shannon, C. E. (1938). A symbolic analysis of relay and switching circuits. *Transactions of the American Institute of Electrical Engineers*, 57, 713–723.
+21. Slepian, D. (1953). On the number of symmetry types of Boolean functions of $n$ variables. *Canadian Journal of Mathematics*, 5, 185–193. https://doi.org/10.4153/CJM-1953-020-x
+22. Stephen, T., & Yusun, T. (2012). Counting inequivalent monotone Boolean functions. arXiv:1209.4623.
+23. Veitch, E. W. (1952). A chart method for simplifying truth functions. *Proceedings of the Association for Computing Machinery* (Pittsburgh Meeting, May 2–3, 1952), 127–133.

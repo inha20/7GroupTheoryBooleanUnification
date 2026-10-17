@@ -2,8 +2,6 @@
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Demo-blue?style=flat-square&logo=github)](https://inha20.github.io/7GroupTheoryBooleanUnification/)
 [![Field](https://img.shields.io/badge/Field-Group%20Theory%20%7C%20Boolean%20Algebra-purple?style=flat-square)](https://inha20.github.io/7GroupTheoryBooleanUnification/)
-[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
-
 **논문 제목:** 카르노맵 위의 4변수 부울 함수 공간의 군론적 분류  
 **Title:** Group-Theoretic Classification of 4-Variable Boolean Function Spaces on Karnaugh Maps  
 **저자:** 최종훈 (Jonghun Choi) — 인하공업전문대학 졸업 · 독립 연구자  
@@ -98,4 +96,4 @@ Karnaugh map, Boolean function space, variable arrangement equivalence, symmetri
 ```
 
 ---
-© 2026 Jonghun Choi (최종훈). Released under the MIT License.
+© 2026 Jonghun Choi (최종훈). All rights reserved.

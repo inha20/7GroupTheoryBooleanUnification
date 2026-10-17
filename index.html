@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>카르노맵 4변수 부울 함수 공간의 군론적 분류 | Paper 7</title>
+  <title>카르노맵 위의 4변수 부울 함수 공간의 군론적 분류 | Paper 7</title>
   <meta name="description" content="변수 배치, 변수 순열 S4, 입력 반전이 이루는 군 B4의 작용으로 4변수 카르노맵 부울 함수 공간을 분류한다. 자기완결적 논문." />
-  <meta name="keywords" content="부울 함수, 카르노맵, D4 군, S4 군, Burnside, 동치류, 대칭 부울 함수, 변수 재배열, 궤도 분류" />
+  <meta name="keywords" content="부울 함수, 카르노맵, 격자 대칭군 W, S4 군, B4 군, Burnside, 동치류, 대칭 부울 함수, 변수 배치, 궤도 분류" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -196,18 +196,18 @@
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4l4 4 4-4"/></svg>
         </button>
         <div class="global-nav-dropdown">
-          <a href="../Research-Portfolio-main/index.html">🏠 Research Hub</a>
+          <a href="https://inha20.github.io/Research-Portfolio/">🏠 Research Hub</a>
           <div class="nav-sep"></div>
-          <a href="../1KMapStructureInvariance-main/index.html">P1 · KMap Structure Invariance</a>
-          <a href="../2SymmetricBooleanFunctionMinorThesis-main/index.html">P2 · Symmetric Boolean Function</a>
-          <a href="../3VariableRearrangementInvarianceMinorThesis-main/index.html">P3 · Variable Rearrangement</a>
-          <a href="../4StructureRecognitionTheory-main/index.html">P4 · Structure Recognition Theory</a>
-          <a href="../5HumanAIResearchCollaboration-main/index.html">P5 · Human–AI Collaboration</a>
-          <a href="../6BooleanFunctionSpaceTheory-main/index.html">P6 · Boolean Function Space</a>
-          <a href="../7GroupTheoryBooleanUnification-main/index.html" class="active">P7 · Group Theory Unification</a>
-          <a href="../8StructuralThinkingInAIEra-main/index.html">P8 · Structural Thinking in AI Era</a>
+          <a href="https://inha20.github.io/1KMapStructureInvariance/">P1 · KMap Structure Invariance</a>
+          <a href="https://inha20.github.io/2SymmetricBooleanFunctionMinorThesis/">P2 · Symmetric Boolean Function</a>
+          <a href="https://inha20.github.io/3VariableRearrangementInvarianceMinorThesis/">P3 · Variable Rearrangement</a>
+          <a href="https://inha20.github.io/4StructureRecognitionTheory/">P4 · Structure Recognition Theory</a>
+          <a href="https://inha20.github.io/5HumanAIResearchCollaboration/">P5 · Human–AI Collaboration</a>
+          <a href="https://inha20.github.io/6BooleanFunctionSpaceTheory/">P6 · Boolean Function Space</a>
+          <a href="https://inha20.github.io/7GroupTheoryBooleanUnification/" class="active">P7 · Group Theory Unification</a>
+          <a href="https://inha20.github.io/8StructuralThinkingInAIEra/">P8 · Structural Thinking in AI Era</a>
           <div class="nav-sep"></div>
-          <a href="../inha20-main/index.html">👤 Researcher Profile</a>
+          <a href="https://inha20.github.io/inha20/">👤 Researcher Profile</a>
         </div>
       </div>
 
@@ -228,7 +228,7 @@
     <h1 class="hero-title">카르노맵 위의 4변수 부울 함수 공간의 군론적 분류</h1>
     <p class="hero-sub">Group-Theoretic Classification of 4-Variable Boolean Function Spaces on Karnaugh Maps — S₄ 변수 순열 · B₄ 부호 순열군 · Burnside 보조정리</p>
     <div class="tag-cloud">
-      <span class="tag-chip">D₄ Dihedral Group</span>
+      <span class="tag-chip">격자 대칭군 W = D₄ ≀ Z₂</span>
       <span class="tag-chip">S₄ Symmetric Group</span>
       <span class="tag-chip">Burnside Lemma</span>
       <span class="tag-chip">Boolean Functions</span>
@@ -251,11 +251,11 @@
     <article class="card grid-wide">
       <div class="card-title">초록 / Abstract</div>
       <p style="font-size:1.02rem;line-height:1.85;color:var(--text);">
-        본 논문은 4변수 카르노맵 위의 부울 함수 공간 F₄를 변수 순열군 <strong>S₄</strong>, 입력 반전군 <strong>Z₂⁴</strong>, 카르노맵의 격자 대칭이 이루는 부호 순열군 <strong>B₄ = Z₂⁴ ⋊ S₄</strong>의 작용으로 분류한다.
+        본 논문은 4변수 카르노맵 위의 부울 함수 공간 F₄를 변수 순열군 <strong>S₄</strong>, 입력 반전군 <strong>Z₂⁴</strong>, 이 둘이 이루는 부호 순열군 <strong>B₄ = Z₂⁴ ⋊ S₄</strong>와 그 부분군인 카르노맵의 격자 대칭군 <strong>W</strong>의 작용으로 분류한다.
         필요한 정의와 증명을 모두 본문에 싣는 자기완결적 논문이다.
         주요 결과: 변수 배치 동치류 $24 \to 3$, 대칭 부울 함수 $2^5 = 32$개,
-        Space(XOR) 10궤도 · Space(AND) 30궤도 · Space(NOT) 32궤도 · 전체 F₄ 3,984궤도 (S₄ 작용).
-        S₄와 격자 D₄가 생성하는 합성군(Z₂⁴ ⋊ S₄, 크기 384) 하에서는 전체 F₄ 402궤도 · 아핀 6궤도 · 자기쌍대 7궤도.
+        아핀 함수 10궤도 · 단조 함수 30궤도 · 자기쌍대 함수 32궤도 · 전체 F₄ 3,984궤도 (S₄ 작용).
+        S₄와 격자 평면 대칭 D₄<sup>grid</sup>(회전·반사 8개)가 생성하는 합성군 B₄(크기 384) 하에서는 전체 F₄ 402궤도 · 아핀 6궤도 · 자기쌍대 7궤도.
         모든 결과는 Burnside 보조정리와 Python 전산 열거로 이중 검증되었다.
       </p>
       <div style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:.4rem;">
@@ -274,7 +274,7 @@
         <div class="theorem-box">
           <div class="th-label">정리 1 — 변수 배치 동치류 (격자 대칭 W, 위수 128)</div>
           <div class="th-text">$|\mathcal{E}| = \dfrac{\binom{4}{2}}{2} = 3$</div>
-          <div class="th-proof">24개 배치 → 배치 변환군 D₄(위수 8; 평면 동작으로는 토러스 이동 포함 위수 128) 작용 → 3개 독립 동치류 (AB/CD, AC/BD, AD/BC)</div>
+          <div class="th-proof">24개 배치 → 격자 대칭 W(위수 128)가 배치에 일으키는 변환(위수 8의 이면체군, 자유 작용) → 3개 동치류 (AB/CD, AC/BD, AD/BC). 토러스 이동 없이 격자 평면 대칭 D₄<sup>grid</sup> 8개만 쓰면 12개로 갈라진다.</div>
         </div>
         <div class="theorem-box">
           <div class="th-label">§4 — 완전 대칭 함수</div>
@@ -283,18 +283,18 @@
         </div>
         <div class="theorem-box">
           <div class="th-label">§5 — S₄ 궤도 분류 (Burnside)</div>
-          <div class="th-text">전체 F₄: 3,984궤도 · XOR: 10 · AND: 30 · NOT: 32</div>
+          <div class="th-text">전체 F₄: 3,984궤도 · 아핀: 10 · 단조: 30 · 자기쌍대: 32</div>
           <div class="th-proof">Fix 표 전부 수록, 단조 30궤도 완전 목록 포함, Python 전수 열거로 독립 검증</div>
         </div>
         <div class="theorem-box">
-          <div class="th-label">§5.5 — Space(NOT) 고정점 비존재</div>
-          <div class="th-text">$\text{Fix}_{S_4}(\text{Space(NOT)}) = \emptyset$</div>
-          <div class="th-proof">자기쌍대 ∧ 완전대칭 → 모순 ∴ 고정점 없음</div>
+          <div class="th-label">§5.5 — 자기쌍대 ∩ 완전 대칭 = ∅</div>
+          <div class="th-text">$D \cap \mathcal{S}_4 = \emptyset$</div>
+          <div class="th-proof">완전 대칭이면서 자기쌍대이려면 $v_{4-k} = \neg v_k$인데 $k = 2$에서 $v_2 = \neg v_2$가 되어 모순</div>
         </div>
         <div class="theorem-box">
-          <div class="th-label">정리 2·3 — S₄ × 격자 D₄ 합성군</div>
-          <div class="th-text">$G = \langle S_4, D_4 \rangle = \mathbb{Z}_2^4 \rtimes S_4$, $|G| = 384$ · F₄: 402궤도 · 아핀 6 · 자기쌍대 7</div>
-          <div class="th-proof">직접곱이 아님 (가환 X, D₄ ∩ S₄ = 2). 20개 켤레류 Burnside로 증명 + 전수 열거 검증</div>
+          <div class="th-label">정리 2·3 — 합성군 ⟨S₄, D₄<sup>grid</sup>⟩ = B₄</div>
+          <div class="th-text">$G = \langle S_4, D_4^{\mathrm{grid}} \rangle = B_4 = \mathbb{Z}_2^4 \rtimes S_4$, $|G| = 384$ · F₄: 402궤도 · 아핀 6 · 자기쌍대 7</div>
+          <div class="th-proof">직접곱이 아님 (두 군은 가환하지 않고 |D₄<sup>grid</sup> ∩ S₄| = 2). 20개 켤레류 Burnside로 증명 + 전수 열거 검증</div>
         </div>
         <div class="theorem-box">
           <div class="th-label">명제 2 — 패리티와 체커보드</div>
@@ -455,27 +455,27 @@
           </thead>
           <tbody>
             <tr>
-              <td class="td-mono">Space(XOR)</td>
-              <td>XOR</td>
+              <td class="td-mono">아핀 L</td>
+              <td>XOR, 상수 1</td>
               <td class="td-num">32</td>
               <td class="td-num">10</td>
               <td>아핀 함수 공간 (F₂ 위 벡터 공간)</td>
               <td>Burnside + Python</td>
             </tr>
             <tr>
-              <td class="td-mono">Space(AND)</td>
-              <td>AND, NOT</td>
+              <td class="td-mono">단조 M</td>
+              <td>AND, OR, 상수 0·1</td>
               <td class="td-num">168</td>
               <td class="td-num">30</td>
               <td>단조 부울 함수</td>
               <td>Burnside + Python</td>
             </tr>
             <tr>
-              <td class="td-mono">Space(NOT)</td>
-              <td>NOT, AND, OR</td>
+              <td class="td-mono">자기쌍대 D</td>
+              <td>—</td>
               <td class="td-num">256</td>
               <td class="td-num">32</td>
-              <td>자기쌍대 부울 함수</td>
+              <td>자기쌍대 함수 ($f(\neg\mathbf{x}) = \neg f(\mathbf{x})$)</td>
               <td>Burnside + Python</td>
             </tr>
             <tr style="background:var(--accent-glow);">
@@ -493,7 +493,7 @@
 
     <!-- Equivalence Classes -->
     <article class="card">
-      <div class="card-title">🗂️ 변수 배치 동치류 (D₄)</div>
+      <div class="card-title">🗂️ 변수 배치 동치류 (격자 대칭 W)</div>
       <div style="display:flex;flex-direction:column;gap:.6rem;margin-top:.3rem;">
         <div style="background:var(--violet-bg);border:1px solid rgba(167,139,250,.3);border-radius:var(--radius-sm);padding:.75rem 1rem;">
           <div style="font-family:var(--font-mono);font-size:.8rem;font-weight:600;color:var(--violet);margin-bottom:.3rem;">동치류 ε₁</div>
@@ -518,20 +518,24 @@
       <div class="card-title">🔗 대칭군 관계도</div>
       <div class="synth-flow">
         <div class="synth-row">
-          <div class="synth-box">격자 대칭 W (변수 배치)<br><small>24→3 동치류</small></div>
+          <div class="synth-box">격자 대칭 W (위수 128)<br><small>변수 배치 24→3 동치류</small></div>
           <span class="synth-arrow">⊂</span>
-          <div class="synth-box active">S₄ 재배열 동치<br><small>전체 F₄</small></div>
+          <div class="synth-box active">B₄ = ⟨S₄, W⟩ (위수 384)<br><small>전체 F₄ 402궤도</small></div>
         </div>
         <div class="synth-row" style="margin-left:2rem;">
+          <span class="synth-arrow">⊃</span>
+          <div class="synth-box">S₄ 변수 순열 (위수 24)<br><small>B₄의 부분군 · 전체 F₄ 3,984궤도</small></div>
+        </div>
+        <div class="synth-row" style="margin-left:4rem;">
           <span class="synth-arrow">↕</span>
-          <div class="synth-box">Hamming Weight<br><small>32 대칭 함수</small></div>
+          <div class="synth-box">Hamming Weight<br><small>S₄-고정 함수 = 대칭 함수 32개</small></div>
         </div>
         <div class="synth-row">
-          <div class="synth-box">Space(XOR)<br><small>10궤도</small></div>
-          <span class="synth-arrow">+</span>
-          <div class="synth-box">Space(AND)<br><small>30궤도</small></div>
-          <span class="synth-arrow">+</span>
-          <div class="synth-box">Space(NOT)<br><small>32궤도</small></div>
+          <div class="synth-box">아핀 L<br><small>S₄ 10궤도</small></div>
+          <span class="synth-arrow">·</span>
+          <div class="synth-box">단조 M<br><small>S₄ 30궤도</small></div>
+          <span class="synth-arrow">·</span>
+          <div class="synth-box">자기쌍대 D<br><small>S₄ 32궤도</small></div>
         </div>
       </div>
     </article>
