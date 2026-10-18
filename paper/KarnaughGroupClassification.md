@@ -5,7 +5,7 @@
 **저자:** 최종훈 (Jonghun Choi)  
 인하공업전문대학 졸업 · 독립 연구자  
 **연락처:** cjh3cjh@naver.com  
-**GitHub:** [github.com/inha20/7GroupTheoryBooleanUnification](https://github.com/inha20/7GroupTheoryBooleanUnification)  
+**GitHub:** [github.com/inha20/7KarnaughGroupClassification](https://github.com/inha20/7KarnaughGroupClassification)  
 
 ---
 
@@ -45,7 +45,7 @@
 2장은 기호와 도구를 정의한다. 3장은 변수 배치와 격자 대칭을 다룬다. 4장은 완전 대칭 함수를 분류한다. 5장은 $S_4$ 궤도를 계산한다. 6장은 합성군과 그 궤도를 계산한다. 7장은 한계와 향후 과제를 논한다.
 
 ### 1.4 재현성
-이 논문의 GitHub 저장소(github.com/inha20/7GroupTheoryBooleanUnification)의 `scripts/`에 있는 표준 라이브러리 전용 Python 스크립트가 본문의 수치를 열거로 대조한다. 스크립트는 논문에 싣지 않았다. 본문의 "(`verify_*.py`로 확인)"은 해당 스크립트의 출력이 그 값과 일치한다는 뜻이다.
+이 논문의 GitHub 저장소(github.com/inha20/7KarnaughGroupClassification)의 `scripts/`에 있는 표준 라이브러리 전용 Python 스크립트가 본문의 수치를 열거로 대조한다. 스크립트는 논문에 싣지 않았다. 본문의 "(`verify_*.py`로 확인)"은 해당 스크립트의 출력이 그 값과 일치한다는 뜻이다.
 
 | 스크립트 | 검증 내용 |
 |:---|:---|
