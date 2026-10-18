@@ -51,6 +51,7 @@ Karnaugh map, Boolean function space, variable arrangement equivalence, symmetri
 ```
 7GroupTheoryBooleanUnification/
 ├─ README.md                               ← 저장소 안내 (본 문서)
+├─ LICENSE                                 ← 이용 조건 (All rights reserved)
 ├─ index.html                              ← 대화형 웹 논문 포털 (KaTeX)
 ├─ paper/
 │  ├─ GroupTheoryBooleanUnification.md     ← 논문 전문
@@ -98,4 +99,4 @@ Karnaugh map, Boolean function space, variable arrangement equivalence, symmetri
 ```
 
 ---
-© 2026 Jonghun Choi (최종훈). All rights reserved.
+© 2026 Jonghun Choi (최종훈). All rights reserved. 이용 조건은 [LICENSE](LICENSE)를 참조하세요.

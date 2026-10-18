@@ -1,0 +1,36 @@
+Copyright (c) 2026 Jonghun Choi (최종훈). All rights reserved.
+
+This repository contains an unpublished research manuscript (text, figures,
+web portal and, where present, verification scripts), made publicly available
+for reading and review. No license is granted except as stated below.
+
+Permitted without further permission:
+  1. Reading the repository and its web pages, and keeping a copy for
+     personal reading and review.
+  2. Citing the work with attribution (author, title, URL).
+  3. Quoting short passages with attribution, to the extent permitted by
+     applicable copyright exceptions (fair use, fair dealing, right of
+     quotation).
+  4. Running the scripts in `scripts/` (where present) to check the results
+     reported in the paper.
+Public repositories on GitHub may also be viewed and forked on GitHub as
+allowed by the GitHub Terms of Service.
+
+Not permitted without the author's written permission: reproducing or
+redistributing the text, figures or code in whole or in substantial part;
+creating derivative works; reusing the material in publications, courses or
+commercial products.
+
+The author keeps all rights, including the right to submit the work to
+conferences or journals and to transfer or license the rights to a publisher.
+The author may change these terms for later versions.
+
+Contact: cjh3cjh@naver.com
+
+---
+
+저작권은 최종훈(Jonghun Choi)에게 있으며 모든 권리를 보유합니다. 위 1~4에서
+허용한 이용(열람, 출처를 밝힌 인용, 짧은 발췌, 검증 스크립트 실행) 외의
+이용(전재, 재배포, 2차 저작물 작성, 출판물·강의·상업적 이용 등)에는 저자의
+서면 허락이 필요합니다. 저자는 학술대회·학술지 투고와 출판사에 대한 권리 양도
+또는 이용 허락의 권리를 포함한 모든 권리를 유지합니다.
