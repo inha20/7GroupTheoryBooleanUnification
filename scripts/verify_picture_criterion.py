@@ -2,7 +2,7 @@
 정리 4(2) 의 판정 기준 검증 (표준 라이브러리만 사용)
 
 주장: 함수 f 의 B4-궤도 안의 W-궤도 수 (= 그림 종류 수) 는
-      f 의 B4-정지군 H_f 의 S4 성분들이 세 변수 쌍 분할
+      f 의 B4-안정화군 H_f 의 S4 성분들이 세 변수 쌍 분할
       {01|23}, {02|13}, {03|12} 위에 일으키는 치환군의 궤도 수와 같다.
       (S4 -> S3 의 상이 자명하면 3, 위수 2 이면 2, 3-순환을 포함하면 1)
 
@@ -117,7 +117,7 @@ for f in range(1 << 16):
         g = next(iter(rem))
         rem -= orbit_under(g, W_IDX)
         k_brute += 1
-    stab = {e[4] for e in ELEMS if act(f, e[3]) == f}   # (ii) 정지군의 분할 치환상
+    stab = {e[4] for e in ELEMS if act(f, e[3]) == f}   # (ii) 안정화군의 분할 치환상
     k_crit = orbits_of_group_on_parts(stab)
     image_sizes[generated_group_size(stab)] += len(ob)
     by_bruteforce[k_brute] += len(ob)
@@ -129,7 +129,7 @@ for f in range(1 << 16):
 print("[기준 검증] B4-궤도 불일치 개수:", mismatch)
 print("  정의대로 센 그림 종류별 함수 수  :", sorted(by_bruteforce.items()))
 print("  S3-상 궤도 수 기준으로 센 함수 수:", sorted(by_criterion.items()))
-print("  정지군의 S3 상 크기별 함수 수 (1=자명, 2=위수 2, 3 또는 6=3-순환 포함):", sorted(image_sizes.items()))
+print("  안정화군의 S3 상 크기별 함수 수 (1=자명, 2=위수 2, 3 또는 6=3-순환 포함):", sorted(image_sizes.items()))
 assert mismatch == 0
 assert (by_bruteforce[1], by_bruteforce[2], by_bruteforce[3]) == (3220, 36204, 26112)
 assert image_sizes[1] == by_criterion[3] and image_sizes[2] == by_criterion[2]

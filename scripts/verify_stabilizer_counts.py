@@ -1,12 +1,12 @@
 """
-정지군 격자 위의 뫼비우스/포함-배제로 계수를 유도하고 열거와 대조한다 (표준 라이브러리만 사용)
+안정화군 격자 위의 뫼비우스/포함-배제로 계수를 유도하고 열거와 대조한다 (표준 라이브러리만 사용)
 
-(A) 단조 함수의 S4-궤도 크기 분포: S4 의 부분군 30개 위에서 정확한 정지군 개수를 뫼비우스 반전으로 구한다.
+(A) 단조 함수의 S4-궤도 크기 분포: S4 의 부분군 30개 위에서 정확한 안정화군 개수를 뫼비우스 반전으로 구한다.
     Fix(H) = 단조 함수 중 H 로 불변인 것의 수 (168 개 단조 함수 목록으로 계산).
 (B) 그림 종류별 함수 개수: B4 의 원소 집합 T 에 대해
         #{f : f 가 T 의 어떤 원소로 불변} = Σ_{S ⊆ 순환부분군(T), S≠∅} (-1)^{|S|+1} 2^{orb(<S>)}
     을 군의 폐포(생성된 군) 위의 동적계획법으로 계산한다. 함수는 세지 않고 군 <S> 의 점 궤도 수만 쓴다.
-      - T = S4 성분이 3-순환인 원소 -> 3,220  (정지군의 S3 상이 S3 인 함수)
+      - T = S4 성분이 3-순환인 원소 -> 3,220  (안정화군의 S3 상이 S3 인 함수)
       - T = S3 상이 호환인 원소 전부  -> 39,424 = 36,204 + 3,220
 """
 import itertools
@@ -96,13 +96,13 @@ assert len(subgroups) == 30
 
 fix = {H: sum(1 for f in MONO if all(fixed_by(f, h) for h in H)) for H in subgroups}
 exact = {}
-for H in subgroups:                       # 위수 큰 것부터: 정확히 H 가 정지군인 함수 수
+for H in subgroups:                       # 위수 큰 것부터: 정확히 H 가 안정화군인 함수 수
     exact[H] = fix[H] - sum(exact[K] for K in exact if H < K)
 assert all(v >= 0 for v in exact.values())
 by_order = Counter()
 for H, v in exact.items():
     by_order[len(H)] += v
-print("   정지군 위수별 단조 함수 수:", sorted(by_order.items(), reverse=True))
+print("   안정화군 위수별 단조 함수 수:", sorted(by_order.items(), reverse=True))
 size_dist = {}
 for k, cnt in by_order.items():
     size = 24 // k
@@ -111,7 +111,7 @@ for k, cnt in by_order.items():
 size_dist = {s: c for s, c in size_dist.items() if c}
 print("   궤도 크기별 궤도 수:", sorted(size_dist.items()))
 assert size_dist == {1: 6, 3: 2, 4: 9, 6: 6, 12: 7}
-print("   (크기 24 궤도 없음 = 정지군이 자명한 단조 함수가 없음)")
+print("   (크기 24 궤도 없음 = 안정화군이 자명한 단조 함수가 없음)")
 
 # ------------------------------------------------ (B) B4 위의 포함-배제 (함수를 세지 않음)
 ELEMS = []

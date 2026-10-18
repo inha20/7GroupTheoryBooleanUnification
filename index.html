@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>카르노맵 위의 4변수 부울 함수 공간의 군론적 분류 | Paper 7</title>
-  <meta name="description" content="변수 배치, 변수 순열 S4, 입력 반전이 이루는 군 B4의 작용으로 4변수 카르노맵 부울 함수 공간을 분류한다. 자기완결적 논문." />
+  <meta name="description" content="변수 배치, 변수 순열 S4, 입력 반전이 이루는 군 B4의 작용으로 4변수 카르노맵 부울 함수 공간을 분류한다. 정의와 증명을 본문에 실은 논문." />
   <meta name="keywords" content="부울 함수, 카르노맵, 격자 대칭군 W, S4 군, B4 군, Burnside, 동치류, 대칭 부울 함수, 변수 배치, 궤도 분류" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -198,12 +198,14 @@
         <div class="global-nav-dropdown">
           <a href="https://inha20.github.io/Research-Portfolio/">🏠 Research Hub</a>
           <div class="nav-sep"></div>
+          <div style="padding:.3rem .9rem;font-size:.72rem;color:var(--text-faint);">보관된 이전 연구 노트 (읽지 않아도 됨)</div>
           <a href="https://inha20.github.io/1KMapStructureInvariance/">P1 · KMap Structure Invariance</a>
           <a href="https://inha20.github.io/2SymmetricBooleanFunctionMinorThesis/">P2 · Symmetric Boolean Function</a>
           <a href="https://inha20.github.io/3VariableRearrangementInvarianceMinorThesis/">P3 · Variable Rearrangement</a>
           <a href="https://inha20.github.io/4StructureRecognitionTheory/">P4 · Structure Recognition Theory</a>
           <a href="https://inha20.github.io/5HumanAIResearchCollaboration/">P5 · Human–AI Collaboration</a>
           <a href="https://inha20.github.io/6BooleanFunctionSpaceTheory/">P6 · Boolean Function Space</a>
+          <div class="nav-sep"></div>
           <a href="https://inha20.github.io/7GroupTheoryBooleanUnification/" class="active">P7 · Group Theory Unification</a>
           <a href="https://inha20.github.io/8StructuralThinkingInAIEra/">P8 · Structural Thinking in AI Era</a>
           <div class="nav-sep"></div>
@@ -223,7 +225,7 @@
   <section class="hero">
     <div class="hero-meta">
       <span class="paper-badge">Paper 7 · Math Paper</span>
-      <span style="font-family:var(--font-mono);font-size:.8rem;color:var(--text-faint);">자기완결적 논문</span>
+      <span style="font-family:var(--font-mono);font-size:.8rem;color:var(--text-faint);">정의와 증명을 본문에 실은 논문</span>
     </div>
     <h1 class="hero-title">카르노맵 위의 4변수 부울 함수 공간의 군론적 분류</h1>
     <p class="hero-sub">Group-Theoretic Classification of 4-Variable Boolean Function Spaces on Karnaugh Maps — S₄ 변수 순열 · B₄ 부호 순열군 · Burnside 보조정리</p>
@@ -241,6 +243,7 @@
 
   <div class="action-bar">
     <a class="btn btn-primary" href="paper/GroupTheoryBooleanUnification.md" download>📄 논문 원고 다운로드</a>
+    <a class="btn btn-ghost" href="paper/01_GroupTheoryBooleanUnification.pdf" download>📄 논문 PDF (28p · 869KB)</a>
     <a class="btn btn-ghost" href="https://github.com/inha20/7GroupTheoryBooleanUnification" target="_blank" rel="noopener">⭐ GitHub</a>
     <button class="btn btn-ghost" onclick="copyBibtex7()">📋 BibTeX 복사</button>
   </div>
@@ -252,11 +255,11 @@
       <div class="card-title">초록 / Abstract</div>
       <p style="font-size:1.02rem;line-height:1.85;color:var(--text);">
         본 논문은 4변수 카르노맵 위의 부울 함수 공간 F₄를 변수 순열군 <strong>S₄</strong>, 입력 반전군 <strong>Z₂⁴</strong>, 이 둘이 이루는 부호 순열군 <strong>B₄ = Z₂⁴ ⋊ S₄</strong>와 그 부분군인 카르노맵의 격자 대칭군 <strong>W</strong>의 작용으로 분류한다.
-        필요한 정의와 증명을 모두 본문에 싣는 자기완결적 논문이다.
+        필요한 정의와 증명을 본문에 싣는 것을 목표로 하는 논문이며, 일부 수치(궤도 크기 분포, 그림 종류별 함수 개수)는 컴퓨터로 수행한 유한 계산이다.
         주요 결과: 변수 배치 동치류 $24 \to 3$, 대칭 부울 함수 $2^5 = 32$개,
         아핀 함수 10궤도 · 단조 함수 30궤도 · 자기쌍대 함수 32궤도 · 전체 F₄ 3,984궤도 (S₄ 작용).
         S₄와 격자 평면 대칭 D₄<sup>grid</sup>(회전·반사 8개)가 생성하는 합성군 B₄(크기 384) 하에서는 전체 F₄ 402궤도 · 아핀 6궤도 · 자기쌍대 7궤도.
-        모든 결과는 Burnside 보조정리와 Python 전산 열거로 이중 검증되었다.
+        본문의 수치는 Burnside 보조정리의 계산과 저자가 작성한 Python 전수 열거의 출력을 서로 대조했다.
       </p>
       <div style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:.4rem;">
         <span style="font-size:.75rem;font-family:var(--font-mono);color:var(--text-faint);">핵심 개념:</span>
@@ -284,7 +287,7 @@
         <div class="theorem-box">
           <div class="th-label">§5 — S₄ 궤도 분류 (Burnside)</div>
           <div class="th-text">전체 F₄: 3,984궤도 · 아핀: 10 · 단조: 30 · 자기쌍대: 32</div>
-          <div class="th-proof">Fix 표 전부 수록, 단조 30궤도 완전 목록 포함, Python 전수 열거로 독립 검증</div>
+          <div class="th-proof">Fix 표 전부 수록, 단조 30궤도 완전 목록 포함, Python 전수 열거와 대조</div>
         </div>
         <div class="theorem-box">
           <div class="th-label">§5.5 — 자기쌍대 ∩ 완전 대칭 = ∅</div>
@@ -308,18 +311,18 @@
         </div>
         <div class="theorem-box">
           <div class="th-label">정리 5 — 그림 종류 수의 판정</div>
-          <div class="th-text">그림 종류 수 = 정지군 $H_f$의 $S_3$ 상이 세 변수쌍 분할에 작용할 때의 궤도 수 (자명 → 3종, 위수 2 → 2종, 위수 6 → 1종)</div>
+          <div class="th-text">그림 종류 수 = 안정화군 $H_f$의 $S_3$ 상이 세 변수쌍 분할에 작용할 때의 궤도 수 (자명 → 3종, 위수 2 → 2종, 위수 6 → 1종)</div>
           <div class="th-proof">$W \backslash B_4 / H_f$의 개수 = $H_f$의 $B_4/W$ 위 궤도 수. 402개 궤도 전부에서 열거와 일치</div>
         </div>
         <div class="theorem-box">
           <div class="th-label">따름정리 6 — 위수 3인 상은 없다</div>
-          <div class="th-text">정지군의 $S_3$ 상은 위수 1, 2, 6 중 하나. 3-순환을 포함하면 상 = $S_3$ (그림 1종)</div>
+          <div class="th-text">안정화군의 $S_3$ 상은 위수 1, 2, 6 중 하나. 3-순환을 포함하면 상 = $S_3$ (그림 1종)</div>
           <div class="th-proof">위수 3 원소는 부호 벡터 공액으로 순수 3-순환과 켤레이고, 세 좌표 위에서 $C_3$-궤도 = $S_3$-궤도(해밍 무게별)이므로 3-순환 불변이면 호환 불변</div>
         </div>
         <div class="theorem-box">
           <div class="th-label">개수의 유도 — 포함·배제와 뫼비우스</div>
           <div class="th-text">그림 1/2/3종 함수: 3,220 / 36,204 / 26,112 · 단조 궤도 크기 1, 3, 4, 6, 12: 6, 2, 9, 6, 7개 · $\mathrm{Fix}_M((12)(34)) = 28$</div>
-          <div class="th-proof">군 폐포 위 포함·배제로 $N_6 = 3{,}220$, $N_{\ge 2} = 39{,}424$ ($S_4$ 부분군 30개 위 뫼비우스로 단조 정지군 위수별 개수). 계산은 컴퓨터로 수행한 유한 계산(닫힌 식 아님)</div>
+          <div class="th-proof">군 폐포 위 포함·배제로 $N_6 = 3{,}220$, $N_{\ge 2} = 39{,}424$ ($S_4$ 부분군 30개 위 뫼비우스로 단조 안정화군 위수별 개수). 계산은 컴퓨터로 수행한 유한 계산(닫힌 식 아님)</div>
         </div>
         <div class="theorem-box">
           <div class="th-label">참고 — 알려진 값과의 관계</div>
@@ -472,7 +475,7 @@
             </tr>
             <tr>
               <td class="td-mono">자기쌍대 D</td>
-              <td>—</td>
+              <td>NOT, 3입력 다수결 MAJ₃</td>
               <td class="td-num">256</td>
               <td class="td-num">32</td>
               <td>자기쌍대 함수 ($f(\neg\mathbf{x}) = \neg f(\mathbf{x})$)</td>

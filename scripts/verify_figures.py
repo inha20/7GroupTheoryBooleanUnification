@@ -1,7 +1,7 @@
 """
 images/ 의 그림이 논문 7의 캡션이 말하는 함수·배치·축 순서와 일치하는지 대조한다 (표준 라이브러리만 사용).
 
-그림은 구 저장소(1~3)의 Word 캡처 PNG 이다. 격자의 0/1 값을 눈으로 옮겨 적은 상수(아래 GRIDS)를
+그림은 Word 문서에서 캡처한 PNG 이다. 격자의 0/1 값을 눈으로 옮겨 적은 상수(아래 GRIDS)를
 7의 정의로 직접 만든 카르노맵 그림과 비교한다. 옮겨 적은 값이 계산과 같으면 캡션이 그림을 정확히 설명한다.
 """
 import itertools
@@ -126,10 +126,10 @@ check("fig13_parity_xor_gray", picture(xor, "AB", "CD", GRAY) == GRIDS["fig13_pa
 check("fig14_parity_xor_binary", picture(xor, "AB", "CD", BINARY) == GRIDS["fig14_parity_xor_binary"], "(0110/1001/1001/0110)")
 check("fig15_parity_xnor_gray", picture(xnor, "AB", "CD", GRAY) == GRIDS["fig15_parity_xnor_gray"])
 check("fig16_parity_xnor_binary", picture(xnor, "AB", "CD", BINARY) == GRIDS["fig16_parity_xnor_binary"])
-# 구 2 저장소의 캡션은 '09 = XOR 이중대각, 11 = XNOR 이중대각' 이었다. 그림 자체와 비교해 라벨이 뒤바뀐 것을 확인한다.
-check("구 2의 09(캡션 'XOR 이중대각') 그림은 XNOR 의 이진 축 그림이다",
+# 그림 파일 09, 11 에 붙어 있던 옛 캡션은 '09 = XOR 이중대각, 11 = XNOR 이중대각' 이었다. 그림 자체와 비교해 라벨이 뒤바뀐 것을 확인한다.
+check("옛 캡션이 'XOR 이중대각'이라 한 그림 09 는 XNOR 의 이진 축 그림이다",
       GRIDS["fig16_parity_xnor_binary"] == picture(xnor, "AB", "CD", BINARY))
-check("구 2의 11(캡션 'XNOR 이중대각') 그림은 XOR 의 이진 축 그림이다",
+check("옛 캡션이 'XNOR 이중대각'이라 한 그림 11 은 XOR 의 이진 축 그림이다",
       GRIDS["fig14_parity_xor_binary"] == picture(xor, "AB", "CD", BINARY))
 
 print("[4] 정리 4 의 예: XOR 평면 f = m(5,6,9,10) 와 XNOR 평면 f = m(0,6,9,15), 세 대표 배치")
