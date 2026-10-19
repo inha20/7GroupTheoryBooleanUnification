@@ -89,7 +89,7 @@ Karnaugh map, Boolean function space, variable arrangement equivalence, symmetri
 ## 📜 인용 정보 (Citation)
 
 ```bibtex
-@misc{choi2026grouptheory,
+@misc{choi2026karnaughgroupclassification,
   author       = {Choi, Jonghun},
   title        = {Group-Theoretic Classification of 4-Variable Boolean Function Spaces on Karnaugh Maps},
   howpublished = {Independent Mathematics Research Program Preprint},
