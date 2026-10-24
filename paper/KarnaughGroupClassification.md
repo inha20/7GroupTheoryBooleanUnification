@@ -3,7 +3,7 @@
 **Group-Theoretic Classification of 4-Variable Boolean Function Spaces on Karnaugh Maps**
 
 **저자:** 최종훈 (Jonghun Choi)  
-인하공업전문대학 졸업 · 독립 연구자  
+인하공업전문대학 2학년 재학 · 독립 연구자  
 **연락처:** cjh3cjh@naver.com  
 **GitHub:** [github.com/inha20/7KarnaughGroupClassification](https://github.com/inha20/7KarnaughGroupClassification)  
 
